@@ -11,7 +11,7 @@ import { PowerWidget } from "../widgets/power"
 export function Dashboard() {
   return (
     <window
-      name="Dashboard"
+      name="dashboard"
       application={app}
       visible={false}
       class="popup"

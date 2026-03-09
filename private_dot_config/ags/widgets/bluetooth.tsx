@@ -6,14 +6,7 @@ export function BluetoothWidget() {
   return (
     <box class="card" vertical>
       <label class="title" label="Bluetooth" />
-
-      <label
-        setup={(self) => {
-          self.hook(bt, () => {
-            self.label = bt.enabled ? "Enabled" : "Disabled"
-          })
-        }}
-      />
+      <label label={bt?.enabled ? "Enabled" : "Disabled"} />
     </box>
   )
 }

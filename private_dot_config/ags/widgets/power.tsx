@@ -6,14 +6,7 @@ export function PowerWidget() {
   return (
     <box class="card" vertical>
       <label class="title" label="Power Profile" />
-
-      <label
-        setup={(self) => {
-          self.hook(power, () => {
-            self.label = power.active_profile
-          })
-        }}
-      />
+      <label label={power?.active_profile ?? "unknown"} />
     </box>
   )
 }

@@ -2,17 +2,12 @@ import Battery from "gi://AstalBattery"
 
 export function BatteryWidget() {
   const bat = Battery.get_default()
+  const percentage = Math.round((bat?.percentage ?? 0) * 100)
 
   return (
     <box class="card" vertical>
       <label class="title" label="Battery" />
-      <label
-        setup={(self) => {
-          self.hook(bat, () => {
-            self.label = `${Math.round(bat.percentage * 100)}%`
-          })
-        }}
-      />
+      <label label={`${percentage}%`} />
     </box>
   )
 }

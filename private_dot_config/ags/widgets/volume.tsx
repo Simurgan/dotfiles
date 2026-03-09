@@ -1,24 +1,18 @@
-import WirePlumber from "gi://AstalWirePlumber"
+import { execAsync } from "ags/process"
+
+const DEFAULT_SINK = "@DEFAULT_AUDIO_SINK@"
+
+const volumeUp = () => execAsync(`wpctl set-volume ${DEFAULT_SINK} 5%+`)
+const volumeDown = () => execAsync(`wpctl set-volume ${DEFAULT_SINK} 5%-`)
 
 export function VolumeWidget() {
-  const wp = WirePlumber.get_default()
-  const speaker = wp.default_speaker
-
   return (
     <box class="card" vertical>
       <label class="title" label="Volume" />
-
-      <slider
-        hexpand
-        drawValue
-        setup={(self) => {
-          self.value = speaker.volume
-
-          self.connect("change-value", (_, __, value) => {
-            speaker.volume = value
-          })
-        }}
-      />
+      <box spacing={6}>
+        <button class="button" onClicked={volumeDown}>-</button>
+        <button class="button" onClicked={volumeUp}>+</button>
+      </box>
     </box>
   )
 }

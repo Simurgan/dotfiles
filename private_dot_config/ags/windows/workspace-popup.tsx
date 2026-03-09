@@ -4,7 +4,7 @@ import { WorkspaceWidget } from "../widgets/workspaces"
 export function WorkspacePopup() {
   return (
     <window
-      name="WorkspaceOverview"
+      name="workspaces"
       application={app}
       visible={false}
       class="popup"
