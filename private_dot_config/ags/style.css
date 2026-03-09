@@ -1,0 +1,42 @@
+window {
+  color: #B3B1AD;
+  font-family: "Inter", "Noto Sans", sans-serif;
+}
+
+.popup {
+  background: #11151C;
+  border-radius: 16px;
+  border: 1px solid #1B222E;
+  padding: 16px;
+}
+
+.card {
+  background: #0A0E14;
+  border-radius: 12px;
+  border: 1px solid #1B222E;
+  padding: 12px;
+}
+
+.button {
+  background: #0A0E14;
+  border-radius: 8px;
+  border: 1px solid #1B222E;
+  padding: 6px 10px;
+}
+
+.button:hover {
+  background: #1B222E;
+}
+
+.title {
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #6C7380;
+}
+
+.good { color: #91B362; }
+.warn { color: #F9AF4F; }
+.bad { color: #EA6C73; }
+.accent { color: #53BDFA; }
