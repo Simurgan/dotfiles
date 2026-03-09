@@ -1,0 +1,30 @@
+# Minimal prompt with Ayu Dark colors
+[character]
+success_symbol = "[➜](bold cyan)"
+error_symbol = "[➜](bold red)"
+
+[directory]
+style = "bold yellow"
+
+[git_branch]
+style = "purple"
+symbol = " "
+
+[git_status]
+style = "red"
+stashed = "📦 "
+
+[package]
+disabled = true
+
+[nodejs]
+style = "green"
+symbol = " "
+
+[python]
+style = "blue"
+symbol = "🐍 "
+
+[cmd_duration]
+min_time = 500
+style = "bold yellow"
