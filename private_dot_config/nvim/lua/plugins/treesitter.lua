@@ -7,16 +7,14 @@ return {
 		local ts = require("nvim-treesitter")
 
 		ts.setup({
-			install_dir = vim.fn.stdpath("data") .. "/site",
-		})
-
-		ts.install({
-			"lua", "nix",
-			"c", "java", "go",
-			"python", "bash", "fish",
-			"dockerfile", "yaml", "json", "toml",
-			"javascript", "typescript", "css", "html",
-			"markdown", "latex", "sql",
+			ensure_installed = {
+				"lua", "nix",
+				"c", "java", "go",
+				"python", "bash", "fish",
+				"dockerfile", "yaml", "json", "toml",
+				"javascript", "typescript", "css", "html",
+				"markdown", "latex", "sql",
+			},
 		})
 
 		vim.api.nvim_create_autocmd("FileType", {
@@ -37,11 +35,9 @@ return {
 
 				pcall(vim.treesitter.start, buf, ft)
 
-				-- folds
-				vim.wo.foldmethod = "expr"
-				vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+				vim.wo[0].foldmethod = "expr"
+				vim.wo[0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
 
-				-- indentation
 				vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 			end,
 		})
